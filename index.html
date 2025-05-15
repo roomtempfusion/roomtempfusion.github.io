@@ -3,16 +3,14 @@
   <head>
     <!-- Page setup -->
     <meta charset="utf-8">
-    <title>Humza Khan's Website</title>
+    <title>Ekhanomics</title>
     <meta name="description" content="Humza Khan's website">
-    <meta name="author" content="Information about the author here">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <link rel="icon" type="image/png" href="favicon.png">
-  
+<!--    <link rel="icon" type="image/jpeg" href="trvthnuke.jpeg">-->
     <!-- Stylesheets -->
     <!-- Reset default styles and add support for google fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Calibri" rel="stylesheet" type="text/css" />
    
     <!-- Custom styles -->
     <link href="style.css" rel="stylesheet" type="text/css" />
@@ -28,15 +26,22 @@
   <body>
 
     <header id="header">
-      <img src="logo.png">
+      <img src="okun.png", width=200px>
       <h1>Humza Khan</h1>
       
       <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
-      <ul class="main-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Projects</a></li>
-      </ul>                 
+    <ul class="main-menu">
+      <li><a href="#home">Home</a></li>
+
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+    </ul>
+
     </header>
    
     <div id="container">
@@ -46,32 +51,192 @@
           <div id="home" class="content-region hide">
             <h2>Home</h2>
             <p>
-              This is a simple website template published with Github Pages. <a href="https://github.com/zirafa/simple-website-template">Fork this repository</a> to create your own site!
+              Welcome to my personal website! To learn more about me, click the <a href="#about"> about</a> section.
+              To see my projects and published work, click the <a href="#projects"> projects</a> section.
             </p>
           </div>
           
           <div id="about" class="content-region hide">
             <h2>About</h2>
-            <p>
-              Sed tempus urna et pharetra pharetra massa massa ultricies. Porttitor rhoncus dolor purus non enim praesent. Id aliquet risus feugiat in ante metus dictum. 
-            </p>
+                <p>
+                  I am currently a junior at Northwestern University studying Industrial Engineering and Management Sciences (IEMS)
+                  and Economics. My research and academic interests are in the application of data science and operations research
+                  tools to problems in economics, energy, hard technology and finance.
+                  View my <a href="resume.pdf" target="_blank" rel="noopener"> resume</a> to see more about my education,
+                  skills and work experience.
+                </p>
+              <h3> Links and Contact </h3>
+                <p>
+                  You can reach me at <a href="mailto:humzakhan2026@u.northwestern.edu">humzakhan2026@u.northwestern.edu</a>
+                </p>
+                <p>
+                  Connect with me on <a href="https://www.linkedin.com/in/hkhan04/">LinkedIn</a> or check out my
+                  <a href="https://github.com/roomtempfusion/">GitHub</a>
+                </p>
+              <h3> What's with the logo?</h3>
+                <p>
+                  "It takes a heap of Harberger triangles to fill an Okun gap" - James Tobin
+                </p>
           </div>
           
-          <div id="contact" class="content-region hide">
-            <h2>Contact</h2>
-            <p>
-              Pellentesque nec nam aliquam sem et tortor consequat. Quisque sagittis purus sit amet volutpat consequat. Magna eget est lorem ipsum dolor. 
-            </p>
+          <div id="projects" class="content-region hide">
+          <h2> Projects in progress </h2>
+            <div class="section-box">
+              <div class="corner-box">
+                <a class="icon-btn">
+                  <img src="python_img.png" alt="Python icon">
+                  <span class="icon-label">Data Science</span>
+                </a>
+                <a class="icon-btn">
+                  <img src="gear.png" alt="operations research">
+                  <span class="icon-label">Operations Research</span>
+                </a>
+
+              </div>
+              <h3> Digital Modernization of Bus Driver Allocation </h3>
+                <h4> <em> IEMS 394: Engineering Capstone Project </em> </h4>
+                  <p>
+                    This project, currently in progress as part of my engineering degree's capstone, is all about
+                    digital modernization. Our client is a large bus contractor company that serves school districts all
+                    over the U.S. The goal of the project is to convert the currently manual process for assigning bus
+                    drivers to routes into a more efficient digital way. Our current solution is a self-standing web-app,
+                    coded entirely in Python, that utilizes the
+                    <a href="https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm"
+                       target="_blank" rel="noopener">Gale-Shapley </a>
+                    allocation algorithm to assign drivers.
+                  </p>
+                <p> Check back in a few weeks for the full rundown! </p>
+              </div>
+            <div class="section-box">
+              <div class="corner-box">
+                <a class="icon-btn">
+                  <img src="s_d.png" alt="Economics icon">
+                  <span class="icon-label">Economics</span>
+                </a>
+                <a class="icon-btn">
+                  <img src="python_img.png" alt="Python icon">
+                  <span class="icon-label">Data Science</span>
+                </a>
+              </div>
+              <h3> The Impact of Nuclear Reactor Closures on Electricity Prices </h3>
+                <h4> <em> ECON 383: Applied Econometrics Final Project </em> </h4>
+                  <p>
+                    This paper presents an analysis of the 2020-2021 closure of Indian Point nuclear reactor in
+                    New York State. I employ a differences-in-differences approach to compare electricity prices across
+                    three combined statistical areas (CBSAs): New York, Philadelphia and Washington D.C. This project is
+                    currently in the planning and analysis stage, but you can see my
+                    <a href="ECON_383___Project_Proposal.pdf"
+                       target="_blank" rel="noopener">proposal </a> and
+                    <a href="ECON_383___Project_Proposal_Presentation.pdf"
+                       target="_blank" rel="noopener">presentation </a> for more information, including proposed data sources
+                    and potential issues.
+                  </p>
+                <p> Check back in a few weeks for the full rundown! </p>
+              </div>
+
+          <h2> Completed Projects </h2>
+            <div class="section-box">
+              <div class="corner-box">
+                <a class="icon-btn">
+                  <img src="s_d.png" alt="Economics icon">
+                  <span class="icon-label">Economics</span>
+                </a>
+                <a class="icon-btn">
+                  <img src="energy.png" alt="energy icon">
+                  <span class="icon-label">Energy & Hard Tech</span>
+                </a>
+
+              </div>
+              <h3> Power Up: How Policymakers Can Save the Grid </h3>
+                <h4> <em> Stanford Economic Review </em> </h4>
+                <p>
+                  One of the most pressing challenges facing us today is how to modernize the U.S. power grid while
+                  balancing the twin concerns of energy security and decarbonization. My commentary
+                  <a href="https://stanfordeconreview.com/2025/02/28/commentary-power-up-how-policymakers-can-save-the-grid/" target="_blank" rel="noopener"> "Power Up:
+                  How Policymakers Can Save the Grid"</a>, published in the Stanford Economic Review, looks at how different
+                  levels of government can cut red tape to harness the trillions in public and private investment dollars
+                  to accelerate the conversion of the American grid.
+                </p>
+            </div>
+            <div class="section-box">
+              <div class="corner-box">
+                <a class="icon-btn">
+                  <img src="python_img.png" alt="python">
+                  <span class="icon-label">Data Science</span>
+                </a>
+                <a class="icon-btn">
+                  <img src="gear.png" alt="operations research">
+                  <span class="icon-label">Operations Research</span>
+                </a>
+              </div>
+              <h3> Deterministic and Stochastic Food Routing and Allocation </h3>
+                <h4> <em> IEMS 365: Analytics for Social Good Final Project </em> </h4>
+                <p>
+                  This project examined the case of the Food Bank of the Southern Tier (FBST) in upstate New York. FBST
+                  has a set of mobile food pantries that are routed throughout the various cities of the region. The goal
+                  of this project was to develop a schedule for these mobile pantries to maximize the effectiveness of FBST.
+                  Our analysis included four parts: demographic analysis, deterministic allocation, cold-weather routing and
+                  an Eisenberg-Gale program for stochastic allocation. See
+                  <a href="IEMS_365_Final_Project.pdf"
+                     target="_blank" rel="noopener"> the final report</a>,
+                  <a href="IEMS_365___Final_Presentation.pdf"
+                     target="_blank" rel="noopener"> the final presentation </a> and
+                  <a href="#"
+                     target="_blank" rel="noopener"> the GitHub repo (link WIP)</a> for the results and
+                  methodology.
+                </p>
+            </div>
+            <div class="section-box">
+              <div class="corner-box">
+                <a class="icon-btn">
+                  <img src="s_d.png" alt="Economics icon">
+                  <span class="icon-label">Economics</span>
+                </a>
+                <a class="icon-btn">
+                  <img src="energy.png" alt="energy icon">
+                  <span class="icon-label">Energy & Hard Tech</span>
+                </a>
+              </div>
+              <h3> Making Waves: Recommendations for a Stronger Quantum Ecosystem </h3>
+                <h4> <em> P33 Chicago </em> </h4>
+                <p>
+                    Quantum technology is a common refrain in science-fiction, but it's a technology that could have
+                    dramatic implications for the future. <a href="MakingWaves.pdf" target="_blank" rel="noopener">
+                    This report</a>, which I coauthored at P33 Chicago, draws on historical analogues to develop
+                    a series of recommendations for local, state and federal policymakers. The report focuses on
+                    three main areas: the talent pipeline, technology commercialization and macro-economic resilience.
+                </p>
+            </div>
+            <div class="section-box">
+              <div class="corner-box">
+                <a class="icon-btn">
+                  <img src="energy.png" alt="energy icon">
+                  <span class="icon-label">Energy & Hard Tech</span>
+                </a>
+                <a class="icon-btn">
+                  <img src="python_img.png" alt="python">
+                  <span class="icon-label">Data Science</span>
+                </a>
+              </div>
+              <h3> International Semiconductor R&D Capabilities Mapping </h3>
+                <h4> <em> U.S. Department Of State </em> </h4>
+                <p>
+                  This report utilizes open-source data from academic journals and government patent offices to construct
+                  a global map of semiconductor assets, institutions and linkages. By leveraging this data, we were able
+                  to construct an interactive dashboard, allowing users to filter by various levels, countries and topics.
+                  Additionally, we provide <a href="ISRDC%20Report.pdf" target="_blank" rel="noopener">
+                  a report</a> and <a href="final_ppt_semiconductors.pdf" target="_blank" rel="noopener">
+                  presentation</a> with analytics on key regional clusters and the global state of play with respect
+                  to various sub-fields. The dashboard, code and data files are all available on
+                  <a href="https://github.com/roomtempfusion/ISRDC" target="_blank" rel="noopener">
+                    GitHub</a>.
+                </p>
+            </div>
+
           </div>
-          
         </div>
       </div>
     </div>
-
-    <footer>  
-      Footer region
-    </footer>
-    
     <!-- Load additional JS scripts here -->
     <script type="text/javascript" src="script.js"></script>
     

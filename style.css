@@ -12,6 +12,9 @@ body {
   font-weight: 400;
   font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #FFFFFF;
+  height: auto;
+  display: block;              /* block‐elements grow to contain their children */
+
 }
 
 /**
@@ -93,17 +96,26 @@ blockquote p:last-child {
 /* Full size background image */
 html, #container, .inner { background-color:transparent;}
 html {
-  background:url(background.jpg) center center no-repeat fixed;
+  background:url(space.jpeg) center center no-repeat fixed;
   background-size:cover;
+  height: auto;
+  display: block;              /* block‐elements grow to contain their children */
+
 }
 body {
   max-width:800px;
   margin:25px auto;
+  height: auto;
+  display: block;              /* block‐elements grow to contain their children */
+
 }
 header, #content, footer { 
-  background: rgba(0,0,0,.8); 
+  background: rgba(0,5,35,.8);
   padding:25px;
-  color:#FFFFFF; 
+  color:#FFFFFF;
+  height: auto;
+  display: block;              /* block‐elements grow to contain their children */
+
 }
 iframe {
   max-width:100%;
@@ -140,4 +152,90 @@ ul.main-menu li a.active {
   display:block;
 }
 
+/* Make each <li> a positioning context */
+.main-menu li {
+  position: relative;
+}
 
+/* Hide all submenus by default */
+.main-menu .submenu {
+  display: none;
+  position: absolute;    /* position relative to the parent <li> */
+  top: 100%;             /* sit directly below the parent link */
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;      /* or whatever bg you like */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  white-space: nowrap;   /* prevent items from wrapping */
+}
+
+/* Style submenu links */
+.main-menu .submenu li a {
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Show the submenu when you hover the parent <li> */
+.main-menu li:hover > .submenu {
+  display: block;
+}
+
+/* Optional hover‑styles */
+.main-menu > li:hover > a,
+.main-menu .submenu li:hover > a {
+  background: #f0f0f0;
+}
+
+.section-box {
+  position: relative;
+  background-color: rgba(200,0,0,0.1);    /* pale blue background */
+  border: 2px solid #a0c4ff;    /* a bit stronger border */
+  padding: 1em;                 /* space inside the box */
+  margin: 1.5em 0;              /* space above/below the box */
+  border-radius: 8px;           /* softer corners */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional drop‑shadow */
+}
+
+.corner-box {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  display: flex;
+  flex-direction: column;   /* ← stack each .icon-btn vertically */
+  gap: 0.75rem;             /* ← space between the two rows */
+  align-items: flex-start;  /* ← left‑align each row */
+}
+
+.icon-btn {
+  display: flex;            /* ← icon + text in one horizontal row */
+  align-items: center;      /* ← vertical‑center the icon next to text */
+  gap: 0.4rem;              /* ← space between icon and its label */
+
+  text-decoration: none;
+  color: #fff;
+}
+
+.icon-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.icon-label {
+  font-size: 1.2rem;
+}
+
+.section-box h3 {
+  /* leave space for your absolute‑positioned icons: */
+  padding-right: 20rem;        /* tweak until it sits just left of the icons */
+
+  /* allow normal wrapping: */
+  white-space: normal;
+  overflow-wrap: break-word;  /* modern */
+  word-break: break-word;      /* fall‑back */
+}
