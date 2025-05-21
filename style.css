@@ -96,7 +96,8 @@ blockquote p:last-child {
 /* Full size background image */
 html, #container, .inner { background-color:transparent;}
 html {
-  background:url(space.jpeg) center center no-repeat fixed;
+  /*background:url(space.jpeg) center center no-repeat fixed;*/
+  background:url(foggynu.jpg) center center no-repeat fixed;
   background-size:cover;
   height: auto;
   display: block;              /* block‐elements grow to contain their children */
