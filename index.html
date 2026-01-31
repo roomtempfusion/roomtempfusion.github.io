@@ -1,263 +1,922 @@
-<!doctype html>
-<html>
-  <head>
-    <!-- Page setup -->
-    <meta charset="utf-8">
-    <title>Ekhanomics</title>
-    <meta name="description" content="Humza Khan's website">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<!--    <link rel="icon" type="image/jpeg" href="trvthnuke.jpeg">-->
-    <!-- Stylesheets -->
-    <!-- Reset default styles and add support for google fonts -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Calibri" rel="stylesheet" type="text/css" />
-   
-    <!-- Custom styles -->
-    <link href="./style.css" rel="stylesheet" type="text/css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humza Khan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAFAF8;
+            --bg-secondary: #FFFFFF;
+            --text-primary: #1a1a1a;
+            --text-secondary: #5a5a5a;
+            --text-tertiary: #8a8a8a;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border: #e5e5e5;
+            --border-hover: #d0d0d0;
+            --tag-bg: #f0f0f0;
+        }
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Want to add Bootstrap? -->
-    <!-- Visit: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
-    
-  </head>
-  
-  <body>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <header id="header">
-      <img src="okun.png" width=200px>
-      <h1>Humza Khan</h1>
-      
-      <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
-    <ul class="main-menu">
-      <li><a href="#home">Home</a></li>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 16px;
+        }
 
-      <li>
-        <a href="#about">About</a>
-      </li>
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 250, 248, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 1rem 0;
+        }
 
-      <li>
-        <a href="#projects">Projects</a>
-      </li>
-    </ul>
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    </header>
-   
-    <div id="container">
-      <div class="inner">
-        <div id="content"> 
-          
-          <div id="home" class="content-region hide">
-            <h2>Home</h2>
-            <p>
-              Welcome to my personal website! To learn more about me, click the <a href="#about"> about</a> section.
-              To see my projects and published work, click the <a href="#projects"> projects</a> section.
-            </p>
-          </div>
-          
-          <div id="about" class="content-region hide">
-            <h2>About</h2>
-                <p>
-                  I am currently a senior at Northwestern University in the BS/MS program studying Statistics and Data Science
-                  for my master's and Industrial Engineering and Management Sciences (IEMS)
-                  and Economics for my bachelor's. My research and academic interests are in the
-                  application of data science and operations research tools to problems in economics, energy, policy and finance.
-                  View my <a href="resume.pdf" target="_blank" rel="noopener"> resume</a> to see more about my education,
-                  skills and work experience.
-                </p>
-              <h3> Links and Contact </h3>
-                <p>
-                  You can reach me at <a href="mailto:humzakhan2026@u.northwestern.edu">humzakhan2026@u.northwestern.edu</a>
-                </p>
-                <p>
-                  Connect with me on <a href="https://www.linkedin.com/in/hkhan04/">LinkedIn</a> or check out my
-                  <a href="https://github.com/roomtempfusion/">GitHub</a>
-                </p>
-              <h3> What's with the logo?</h3>
-                <p>
-                  "It takes a heap of Harberger triangles to fill an Okun gap" - James Tobin
-                </p>
-          </div>
-          
-          <div id="projects" class="content-region hide">
-          <h2> Projects in progress </h2>
-            <div class="section-box">
-              <div class="corner-box">
-                <a class="icon-btn">
-                  <img src="python_img.png" alt="Python icon" width=24px>
-                  <span class="icon-label">Data Science</span>
-                </a>
+        .nav-logo {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
 
-              </div>
-              <h3> Graph Neural Networks For Pandemic Planning and Prediction </h3>
-                <h4> <em> STAT 461: Machine Learning on Graphs - Course Project</em> </h4>
-                  <p>
-                    This project is currently in progress for a graduate statistics elective I am currently taking.
-                    The goal is to develop a graph neural network (GNN) to predict COVID-19 cases using a variety of
-                    factors, including government interventions like lockdowns, variant transmissibility, as well as
-                    a mobility graph. Stay tuned for the final product!
-                  </p>
-              </div>
-          <h2> Completed Projects </h2>
-            <div class="section-box">
-              <div class="corner-box">
-                <a class="icon-btn">
-                  <img src="python_img.png" alt="Python icon" width=24px>
-                  <span class="icon-label">Data Science</span>
-                </a>
-                <a class="icon-btn">
-                  <img src="gear.png" alt="operations research">
-                  <span class="icon-label">Operations Research</span>
-                </a>
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-              </div>
-              <h3> Digital Modernization of Bus Driver Allocation </h3>
-                <h4> <em> IEMS 394: Engineering Capstone Project </em> </h4>
-                  <p>
-                    This project, as part of my engineering degree's capstone, is all about
-                    digital modernization. Our client is a large bus contractor company that serves school districts all
-                    over the U.S. The goal of the project was to convert the currently manual process for assigning bus
-                    drivers to routes into a more efficient digital way. Our solution is a self-standing web-app,
-                    coded entirely in Python, that utilizes the
-                    <a href="https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm"
-                       target="_blank" rel="noopener">Gale-Shapley </a>
-                    allocation algorithm to assign drivers, saving more than 15 hours a week of manager time per location.
-                  </p>
-                <p> See the <a href="https://github.com/jwu5711/NU_NACSB_Fin" target="_blank" rel="noopener"> repo and report here!</a> </p>
-              </div>
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
 
-            <div class="section-box">
-              <div class="corner-box">
-                <a class="icon-btn">
-                  <img src="s_d.png" alt="Economics icon">
-                  <span class="icon-label">Economics</span>
-                </a>
-                <a class="icon-btn">
-                  <img src="python_img.png" alt="Python icon">
-                  <span class="icon-label">Data Science</span>
-                </a>
-              </div>
-              <h3> Scrambling for Power: The Impact of Sudden Reactor Shutdowns on Short-Run Electricity Prices </h3>
-                <h4> <em> ECON 383: Applied Econometrics - Final Project </em> </h4>
-                  <p>
-                    I study the short-run impact of unexpected nuclear reactor outages (scrams) on electricity prices
-                    by implementing a stacked Regression Discontinuity in Time (RDiT) design across multiple plants and
-                    electricity markets. Focusing on 13 nuclear scrams across 10 sites, I align each event on its own
-                    outage timestamp and estimate the instantaneous price jump per megawatt of lost capacity.
-                    According to my estimates, each 1 GW of nuclear capacity lost raises the zonal marginal
-                    price by $26.18 ± 15.06/MWh. See the
-                    <a href="ECON_383___Final_Report.pdf"
-                       target="_blank" rel="noopener">report </a> and
-                    <a href="ECON_383___Final_Presentation.pdf"
-                       target="_blank" rel="noopener">presentation </a> for more!
-                  </p>
-              </div>
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
 
-            <div class="section-box">
-              <div class="corner-box">
-                <a class="icon-btn">
-                  <img src="s_d.png" alt="Economics icon">
-                  <span class="icon-label">Economics</span>
-                </a>
-                <a class="icon-btn">
-                  <img src="energy.png" alt="energy icon">
-                  <span class="icon-label">Energy & Hard Tech</span>
-                </a>
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 4rem;
+        }
 
-              </div>
-              <h3> Power Up: How Policymakers Can Save the Grid </h3>
-                <h4> <em> Stanford Economic Review </em> </h4>
-                <p>
-                  One of the most pressing challenges facing us today is how to modernize the U.S. power grid while
-                  balancing the twin concerns of energy security and decarbonization. My commentary
-                  <a href="https://stanfordeconreview.com/2025/02/28/commentary-power-up-how-policymakers-can-save-the-grid/" target="_blank" rel="noopener"> "Power Up:
-                  How Policymakers Can Save the Grid"</a>, published in the Stanford Economic Review, looks at how different
-                  levels of government can cut red tape to harness the trillions in public and private investment dollars
-                  to accelerate the conversion of the American grid.
-                </p>
-            </div>
-            <div class="section-box">
-              <div class="corner-box">
-                <a class="icon-btn">
-                  <img src="python_img.png" alt="python">
-                  <span class="icon-label">Data Science</span>
-                </a>
-                <a class="icon-btn">
-                  <img src="gear.png" alt="operations research">
-                  <span class="icon-label">Operations Research</span>
-                </a>
-              </div>
-              <h3> Deterministic and Stochastic Food Routing and Allocation </h3>
-                <h4> <em> IEMS 365: Analytics for Social Good - Final Project </em> </h4>
-                <p>
-                  This project examined the case of the Food Bank of the Southern Tier (FBST) in upstate New York. FBST
-                  has a set of mobile food pantries that are routed throughout the various cities of the region. The goal
-                  of this project was to develop a schedule for these mobile pantries to maximize the effectiveness of FBST.
-                  Our analysis included four parts: demographic analysis, deterministic allocation, cold-weather routing and
-                  an Eisenberg-Gale program for stochastic allocation. See
-                  <a href="IEMS_365_Final_Project.pdf"
-                     target="_blank" rel="noopener"> the final report</a>,
-                  <a href="IEMS_365___Final_Presentation.pdf"
-                     target="_blank" rel="noopener"> the final presentation </a> and
-                  <a href="#"
-                     target="_blank" rel="noopener"> the GitHub repo (link WIP)</a> for the results and
-                  methodology.
-                </p>
-            </div>
-            <div class="section-box">
-              <div class="corner-box">
-                <a class="icon-btn">
-                  <img src="s_d.png" alt="Economics icon">
-                  <span class="icon-label">Economics</span>
-                </a>
-                <a class="icon-btn">
-                  <img src="energy.png" alt="energy icon">
-                  <span class="icon-label">Energy & Hard Tech</span>
-                </a>
-              </div>
-              <h3> Making Waves: Recommendations for a Stronger Quantum Ecosystem </h3>
-                <h4> <em> P33 Chicago </em> </h4>
-                <p>
-                    Quantum technology is a common refrain in science-fiction, but it's a technology that could have
-                    dramatic implications for the future. <a href="MakingWaves.pdf" target="_blank" rel="noopener">
-                    This report</a>, which I coauthored at P33 Chicago, draws on historical analogues to develop
-                    a series of recommendations for local, state and federal policymakers. The report focuses on
-                    three main areas: the talent pipeline, technology commercialization and macro-economic resilience.
-                </p>
-            </div>
-            <div class="section-box">
-              <div class="corner-box">
-                <a class="icon-btn">
-                  <img src="energy.png" alt="energy icon">
-                  <span class="icon-label">Energy & Hard Tech</span>
-                </a>
-                <a class="icon-btn">
-                  <img src="python_img.png" alt="python">
-                  <span class="icon-label">Data Science</span>
-                </a>
-              </div>
-              <h3> International Semiconductor R&D Capabilities Mapping </h3>
-                <h4> <em> U.S. Department Of State </em> </h4>
-                <p>
-                  This report utilizes open-source data from academic journals and government patent offices to construct
-                  a global map of semiconductor assets, institutions and linkages. By leveraging this data, we were able
-                  to construct an interactive dashboard, allowing users to filter by various levels, countries and topics.
-                  Additionally, we provide <a href="ISRDC%20Report.pdf" target="_blank" rel="noopener">
-                  a report</a> and <a href="final_ppt_semiconductors.pdf" target="_blank" rel="noopener">
-                  presentation</a> with analytics on key regional clusters and the global state of play with respect
-                  to various sub-fields. The dashboard, code and data files are all available on
-                  <a href="https://github.com/roomtempfusion/ISRDC" target="_blank" rel="noopener">
-                    GitHub</a>.
-                </p>
-            </div>
+        .hero-container {
+            max-width: 700px;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+}
 
-          </div>
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            max-width: 320px;
+            background: linear-gradient(145deg, #e8e8e8, #f5f5f5);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-tertiary);
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
+        }
+
+        .hero-content h1 {
+            font-family: 'Newsreader', serif;
+            font-size: 3.5rem;
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            line-height: 1.7;
+            margin-left: auto;   /* Add */
+            margin-right: auto;  /* Add */
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.6rem 0;
+            border-bottom: 1.5px solid var(--text-primary);
+            transition: all 0.2s ease;
+        }
+
+        .hero-link:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .hero-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: 'Newsreader', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .filter-tab:hover {
+            border-color: var(--border-hover);
+            color: var(--text-primary);
+        }
+
+        .filter-tab.active {
+            background: var(--text-primary);
+            color: var(--bg-secondary);
+            border-color: var(--text-primary);
+        }
+
+        /* Project Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .project-card.featured {
+            grid-column: span 2;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.3rem 0.6rem;
+            background: var(--tag-bg);
+            border-radius: 4px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .project-tag.economics { background: #d1fae5; color: #065f46; }
+        .project-tag.data-science { background: #dbeafe; color: #1e40af; }
+        .project-tag.defense { background: #fee2e2; color: #991b1b; }
+        .project-tag.energy { background: #fef3c7; color: #92400e; }
+        .project-tag.ops-research { background: #e9d5ff; color: #6b21a8; }
+
+        .project-status {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            margin-bottom: 0.75rem;
+        }
+
+        .project-status.in-progress {
+            color: #d97706;
+        }
+
+        .project-title {
+            font-family: 'Newsreader', serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        .project-venue {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+        .project-links.stacked {
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .project-link {
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: color 0.2s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-hover);
+        }
+
+        .project-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-sidebar h3 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-tertiary);
+            margin-bottom: 1rem;
+        }
+
+        .about-sidebar ul {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .about-sidebar li {
+            padding: 0.4rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .about-quote {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-left: 3px solid var(--accent);
+            margin-top: 2rem;
+        }
+
+        .about-quote p {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-quote cite {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            font-style: normal;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-left h3 {
+            font-family: 'Newsreader', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .footer-left p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .footer-left a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer-left a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-right {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-social {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .footer-social:hover {
+            background: var(--text-primary);
+            color: var(--bg-secondary);
+            border-color: var(--text-primary);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image-placeholder {
+                margin: 0 auto;
+                max-width: 200px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-links {
+                justify-content: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card.featured {
+                grid-column: span 1;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content, .hero-image {
+            animation: fadeUp 0.6s ease-out forwards;
+        }
+
+        .hero-image {
+            animation-delay: 0.1s;
+        }
+
+        .project-card {
+            opacity: 0;
+            animation: fadeUp 0.5s ease-out forwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.15s; }
+        .project-card:nth-child(3) { animation-delay: 0.2s; }
+        .project-card:nth-child(4) { animation-delay: 0.25s; }
+        .project-card:nth-child(5) { animation-delay: 0.3s; }
+        .project-card:nth-child(6) { animation-delay: 0.35s; }
+        .project-card:nth-child(7) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Humza Khan</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-      </div>
-    </div>
-    <!-- Load additional JS scripts here -->
-    <script type="text/javascript" src="script.js"></script>
-    
-  </body>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+<!--            <div class="hero-image">-->
+<!--                <div class="hero-image-placeholder">-->
+<!--                    Your photo here-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="hero-content">
+                <h1>Humza Khan</h1>
+                <p class="hero-tagline">Economics, Data Science & Policy</p>
+                <p class="hero-description">
+                    Senior at Northwestern University in the BS/MS program studying Statistics (MS),
+                    Industrial Engineering, and Economics. I apply quantitative methods to problems in 
+                    energy, policy, and defense.
+                </p>
+                <div class="hero-links">
+                    <a href="resume.pdf" class="hero-link">
+                        Resume
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hkhan04/" class="hero-link" target="_blank">
+                        LinkedIn
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/roomtempfusion/" class="hero-link" target="_blank">
+                        GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Selected Work</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="economics">Economics</button>
+                <button class="filter-tab" data-filter="data-science">Data Science</button>
+                <button class="filter-tab" data-filter="energy">Energy</button>
+                <button class="filter-tab" data-filter="defense">Defense</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Featured: Stanford Economic Review -->
+                <div class="project-card featured" data-categories="economics energy">
+                    <div class="project-tags">
+                        <span class="project-tag economics">Economics</span>
+                        <span class="project-tag energy">Energy</span>
+                    </div>
+                    <h3 class="project-title">Power Up: How Policymakers Can Save the Grid</h3>
+                    <p class="project-venue">Stanford Economic Review</p>
+                    <p class="project-description">
+                        A commentary on modernizing the U.S. power grid while balancing energy security and decarbonization. 
+                        Examines how different levels of government can streamline regulations to harness trillions in 
+                        public and private investment for grid transformation.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://stanfordeconreview.com/2025/02/28/commentary-power-up-how-policymakers-can-save-the-grid/" class="project-link" target="_blank">
+                            Read Article
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nuclear Scrams -->
+                <div class="project-card" data-categories="economics data-science">
+                    <div class="project-tags">
+                        <span class="project-tag economics">Economics</span>
+                        <span class="project-tag data-science">Data Science</span>
+                    </div>
+                    <h3 class="project-title">Scrambling for Power: Impact of Reactor Shutdowns on Electricity Prices</h3>
+                    <p class="project-venue">ECON 383: Applied Econometrics</p>
+                    <p class="project-description">
+                        A stacked Regression Discontinuity in Time design studying 13 nuclear scrams across 10 sites. 
+                        Findings indicate each 1 GW of nuclear capacity lost raises short-run
+                        zonal marginal prices by $26.18 ± $15.06/MWh.
+                    </p>
+                    <div class="project-links">
+                        <a href="ECON_383___Final_Report.pdf" class="project-link">Report</a>
+                        <a href="ECON_383___Final_Presentation.pdf" class="project-link">Slides</a>
+                    </div>
+                </div>
+
+                <!-- State Dept -->
+                <div class="project-card" data-categories="energy data-science">
+                    <div class="project-tags">
+                        <span class="project-tag energy">Hard Tech</span>
+                        <span class="project-tag data-science">Data Science</span>
+                    </div>
+                    <h3 class="project-title">International Semiconductor R&D Capabilities Mapping</h3>
+                    <p class="project-venue">U.S. Department of State</p>
+                    <p class="project-description">
+                        Open-source intelligence analysis using academic journals and patent data to map global semiconductor 
+                        assets. Delivered an interactive dashboard and comprehensive report on regional clusters and sub-field dynamics.
+                    </p>
+                    <div class="project-links">
+                        <a href="ISRDC%20Report.pdf" class="project-link">Report</a>
+                        <a href="final_ppt_semiconductors.pdf" class="project-link">Slides</a>
+                        <a href="https://github.com/roomtempfusion/ISRDC" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- P33 Quantum -->
+                <div class="project-card" data-categories="energy">
+                    <div class="project-tags">
+                        <span class="project-tag economics">Economics</span>
+                        <span class="project-tag energy">Hard Tech</span>
+                    </div>
+                    <h3 class="project-title">Making Waves: Recommendations for a Stronger Quantum Ecosystem</h3>
+                    <p class="project-venue">P33 Chicago</p>
+                    <p class="project-description">
+                        Policy recommendations drawing on historical analogues to strengthen the quantum technology ecosystem, 
+                        focusing on talent pipelines, commercialization pathways, and macro-economic resilience.
+                    </p>
+                    <div class="project-links">
+                        <a href="MakingWaves.pdf" class="project-link">Report</a>
+                    </div>
+                </div>
+
+                <!-- Bus Driver -->
+                <div class="project-card" data-categories="data-science">
+                    <div class="project-tags">
+                        <span class="project-tag data-science">Data Science</span>
+                        <span class="project-tag ops-research">Operations Research</span>
+                    </div>
+                    <h3 class="project-title">Digital Modernization of Bus Driver Allocation</h3>
+                    <p class="project-venue">IEMS 394: Engineering Capstone</p>
+                    <p class="project-description">
+                        Built a Python web application using the Gale-Shapley algorithm to digitize manual bus driver 
+                        assignment for a national contractor, saving 15+ hours of manager time weekly per location.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/jwu5711/NU_NACSB_Fin" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Food Bank -->
+                <div class="project-card" data-categories="data-science">
+                    <div class="project-tags">
+                        <span class="project-tag data-science">Data Science</span>
+                        <span class="project-tag ops-research">Operations Research</span>
+                    </div>
+                    <h3 class="project-title">Deterministic and Stochastic Food Routing</h3>
+                    <p class="project-venue">IEMS 365: Analytics for Social Good</p>
+                    <p class="project-description">
+                        Optimized mobile food pantry scheduling for the Food Bank of the Southern Tier using demographic 
+                        analysis, deterministic allocation, cold-weather routing, and Eisenberg-Gale stochastic programming.
+                    </p>
+                    <div class="project-links">
+                        <a href="IEMS_365_Final_Project.pdf" class="project-link">Report</a>
+                        <a href="IEMS_365___Final_Presentation.pdf" class="project-link">Slides</a>
+                    </div>
+                </div>
+
+                <!-- Fairmont M&A visuals-->
+                <div class="project-card" data-categories="data-science defense">
+                    <div class="project-tags">
+                        <span class="project-tag data-science">Data Science</span>
+                        <span class="project-tag defense">Defense</span>
+
+                    </div>
+                    <h3 class="project-title">Merger and Acquisition Histories of Defense Primes</h3>
+                    <p class="project-venue">Fairmont Consulting Group</p>
+                    <p class="project-description">
+                        A series of short videos that illustrate the M&A history of five U.S. defense primes over 2000 to
+                        2025, inspired by the 2002 Commission on the Future of United States Aerospace Industry's
+                        <a href="https://www.nasa.gov/wp-content/uploads/2024/01/aerocommissionfinalreport.pdf"
+                           class="project-link">report and visuals</a> on the M&A history of same five primes from 1980-2000.
+                    </p>
+                    <div class="project-links stacked">
+                        <a href="https://www.linkedin.com/posts/fairmont-consulting-group_northrop-grummans-portfolio-moves-over-the-ugcPost-7402558436787351552-6wLf" class="project-link">Northrop Grumman</a>
+                        <a href="https://www.linkedin.com/posts/fairmont-consulting-group_defense-ma-reflects-how-companies-reposition-ugcPost-7403881501706350593-OH6J" class="project-link">RTX</a>
+                        <a href="https://www.linkedin.com/posts/fairmont-consulting-group_as-consolidation-and-technology-driven-deals-ugcPost-7404248168219127808-5jXx" class="project-link">Lockheed Martin</a>
+                        <a href="https://www.linkedin.com/posts/fairmont-consulting-group_defense-ma-continues-to-reshape-the-sector-ugcPost-7404248601775947781-5gkN" class="project-link">Boeing</a>
+                        <a href="https://www.linkedin.com/posts/fairmont-consulting-group_the-past-two-decades-of-defense-ma-highlights-ugcPost-7404249254166294529-RSoW" class="project-link">General Dynamics</a>
+                    </div>
+
+                </div>
+
+                <!-- GNN -->
+                <div class="project-card" data-categories="data-science">
+                    <div class="project-tags">
+                        <span class="project-tag data-science">Data Science</span>
+                    </div>
+                    <h3 class="project-title">Graph Neural Networks for Pandemic Prediction</h3>
+                    <p class="project-venue">STAT 461: Machine Learning on Graphs</p>
+                    <p class="project-description">
+                        An epidemiology-informed hybrid GNN to predict COVID-19 cases using a mobility graph,
+                        government policy responses, and variant transmissibility.
+                    </p>
+                    <div class="project-links">
+                        <a href="STAT_461___Final_Report.pdf" class="project-link">Report</a>
+                        <a href="461_Final.pdf" class="project-link">Slides</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" style="background: var(--bg-secondary);">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">About</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a senior at Northwestern University in the combined BS/MS program, pursuing a master's 
+                        in Statistics alongside bachelor's degrees in Industrial Engineering &
+                        Management Sciences (IEMS) and Economics.
+                    </p>
+                    <p>
+                        My interests sit at the intersection of quantitative methods and real-world systems. I'm
+                        particularly interested in how data science and operations research tools can be leveraged to
+                        solve challenges faster and better in energy, defense, and hard technology.
+                    </p>
+                    <p>
+                        I've had the opportunity to work in a wide variety of governmental, non-profit,
+                        and consulting roles, for a diverse of employers like the U.S. Department of State, P33 Chicago,
+                        and Fairmont Consulting Group.
+                    </p>
+                </div>
+                <div class="about-sidebar">
+                    <h3>Education</h3>
+                    <ul>
+                        <li>MS Statistics</li>
+                        <li>BS Industrial Engineering, Economics</li>
+                        <li>Northwestern University, Class of 2026</li>
+                    </ul>
+
+                    <h3>Interests</h3>
+                    <ul>
+                        <li>Energy Systems</li>
+                        <li>Defense</li>
+                        <li>Data Science</li>
+                        <li>Technology Policy</li>
+                    </ul>
+
+                    <div class="about-quote">
+                        <p>"God has a special providence for fools, drunkards, and the United States of America."</p>
+                        <cite>— Otto von Bismarck</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Contact</h3>
+                <p>
+                    <a href="mailto:humzakhan2026@u.northwestern.edu">humzakhan2026@u.northwestern.edu</a>
+                </p>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.linkedin.com/in/hkhan04/" class="footer-social" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/roomtempfusion/" class="footer-social" target="_blank" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const filter = tab.dataset.filter;
+
+                projectCards.forEach(card => {
+                    const categories = card.dataset.categories || '';
+                    
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'flex';
+                        card.style.animation = 'none';
+                        card.offsetHeight; // Trigger reflow
+                        card.style.animation = 'fadeUp 0.4s ease-out forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
